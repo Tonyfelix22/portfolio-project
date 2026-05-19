@@ -33,7 +33,6 @@ export default function About() {
       className="py-24 px-6 relative"
       style={{ background: '#0A0A0A' }}
     >
-      {/* Section top border */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: 'linear-gradient(90deg, transparent, #2A2520, transparent)' }}
@@ -41,7 +40,6 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto">
 
-        {/* Section Label */}
         <motion.div
           className="flex items-center gap-3 mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -62,31 +60,31 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {/* Left Column - Photo + stat blocks */}
+          {/* Left Column */}
           <motion.div variants={itemVariants} className="space-y-6">
 
-            {/* Photo placeholder */}
+            {/* Photo */}
             <div
-              className="w-full aspect-square flex items-center justify-center relative overflow-hidden"
+              className="w-full aspect-square relative overflow-hidden"
               style={{
                 background: '#0F0F0F',
                 border: '1px solid #2A2520',
                 borderRadius: '4px',
               }}
             >
-              {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2" style={{ borderColor: '#C9A84C' }} />
-              <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2" style={{ borderColor: '#C9A84C' }} />
-              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2" style={{ borderColor: '#C9A84C' }} />
-              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2" style={{ borderColor: '#C9A84C' }} />
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 z-10" style={{ borderColor: '#C9A84C' }} />
+              <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 z-10" style={{ borderColor: '#C9A84C' }} />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 z-10" style={{ borderColor: '#C9A84C' }} />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 z-10" style={{ borderColor: '#C9A84C' }} />
 
-              <div className="text-center">
-                <p className="text-sm" style={{ color: '#5A5040' }}>Photo Placeholder</p>
-                <p className="text-xs mt-2" style={{ color: '#3A3028' }}>Add your professional photo here</p>
-              </div>
+              <img
+                src="https://res.cloudinary.com/die3d5pth/image/upload/f_auto,q_auto,e_sharpen:100,g_face,c_fill,w_600,h_600/v1779177885/WhatsApp_Image_2026-05-19_at_11.01.27_nedulm"
+                alt="Felix Maloba"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
-            {/* Stat row */}
+            {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
                 { label: 'Projects Completed', value: '24' },
@@ -109,14 +107,11 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right Column - Bio and Skills */}
+          {/* Right Column */}
           <motion.div variants={itemVariants} className="space-y-10">
 
             <div className="space-y-4">
-              <h2
-                className="text-4xl font-bold"
-                style={{ color: '#F5F0E8' }}
-              >
+              <h2 className="text-4xl font-bold" style={{ color: '#F5F0E8' }}>
                 Turning data into <span className="gradient-text">decisions.</span>
               </h2>
               <p className="text-lg leading-relaxed" style={{ color: '#8A8070' }}>
@@ -130,7 +125,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Skills */}
             <div className="space-y-4">
               <p className="text-xs tracking-widest uppercase font-semibold" style={{ color: '#5A5040' }}>
                 Core Skills
@@ -162,7 +156,6 @@ export default function About() {
                       </span>
                     </div>
 
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {skill.items.map((item) => (
                         <span
@@ -180,11 +173,7 @@ export default function About() {
                       ))}
                     </div>
 
-                    {/* Progress bar */}
-                    <div
-                      className="w-full h-px"
-                      style={{ background: '#1E1E1E' }}
-                    >
+                    <div className="w-full h-px" style={{ background: '#1E1E1E' }}>
                       <motion.div
                         className="h-full"
                         style={{ background: '#C9A84C' }}
@@ -202,7 +191,6 @@ export default function About() {
         </motion.div>
       </div>
 
-      {/* Section bottom border */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{ background: 'linear-gradient(90deg, transparent, #2A2520, transparent)' }}
@@ -210,4 +198,3 @@ export default function About() {
     </section>
   )
 }
-
