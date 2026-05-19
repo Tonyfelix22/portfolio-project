@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&f[]=clash-display@200,400,700,500,600,300&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #000000;
+  --foreground: #F2EFE9;
+  --muted-gold: #D4AF37;
+  --font-sans: 'Satoshi', sans-serif;
+  --font-heading: 'Clash Display', sans-serif;
+}
+
+@theme inline {
+  --font-sans: 'Satoshi', sans-serif;
+  --font-heading: 'Clash Display', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--muted-gold);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-[#F2EFE9];
+    font-family: var(--font-sans);
+    background-color: #000000;
+    /* Ultra subtle grid */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center top;
+    background-attachment: fixed;
+    /* Optional vignette effect */
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance-pretty {
+    text-wrap: balance;
+  }
+  
+  .heading-xl {
+    @apply text-6xl md:text-8xl lg:text-9xl font-medium tracking-tighter leading-[0.9];
+  }
+  
+  .heading-lg {
+    @apply text-5xl md:text-7xl font-medium tracking-tight leading-[1.05];
+  }
+  
+  .text-muted {
+    @apply text-[#F2EFE9]/60;
+  }
+
+  .pill-button {
+    @apply rounded-full border border-[#F2EFE9]/10 bg-transparent px-8 py-4 text-sm font-medium tracking-wide text-[#F2EFE9] transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 flex items-center justify-center gap-3;
+  }
+  
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  
+  .mask-fade-edges {
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+  }
+}
+
+/* Data Analyst Motion Accents */
+@keyframes dash-scroll {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-dash {
+  stroke-dasharray: 1000;
+  animation: dash-scroll 20s linear infinite;
+}
+
+@keyframes float-minimal {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-minimal {
+  animation: float-minimal 6s ease-in-out infinite;
+}
