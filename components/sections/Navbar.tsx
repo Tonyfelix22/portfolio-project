@@ -96,7 +96,7 @@ export default function Navbar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4AF37]"></span>
             </div>
-            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium">Available for freelance</span>
+            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-medium">Available for any works related </span>
           </div>
         </motion.div>
       )}

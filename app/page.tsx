@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/sections/Navbar'
 import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
 import Projects from '@/components/sections/Projects'
 import Dashboard from '@/components/sections/Dashboard'
 import Skills from '@/components/sections/Skills'
@@ -17,6 +18,7 @@ export default function Home() {
 
       {/* Cinematic Sections */}
       <Hero />
+      <About />
       <Projects />
       <Dashboard />
       <Skills />
